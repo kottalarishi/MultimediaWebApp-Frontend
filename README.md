@@ -1,16 +1,148 @@
-# React + Vite
+# MultimediaWebApp — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the MultimediaWebApp platform. Provides user authentication, file uploads, AI-generated summaries, and a chat interface for interacting with uploaded documents.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+| Tool | Purpose |
+|------|---------|
+| React | UI framework |
+| Vite | Build tool & dev server |
+| React Router | Client-side routing |
+| Axios | HTTP client |
+| CSS | Styling |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User registration and login with JWT authentication
+- File upload interface (PDFs, Audio, Video & Multimedia)
+- AI-generated document summaries
+- Chat interface for uploaded files
+- Dashboard for managing documents
+- Protected routes with automatic auth headers
+
+---
+
+## Screenshots
+
+### Registration
+![Register Page](./screenshot-register.png)
+
+> Create your intelligent AI workspace with username, email, and password.
+
+---
+
+### Dashboard — Upload Content
+![Dashboard](./screenshot-dashboard.png)
+
+> Upload PDFs, audio, video, and multimedia files for AI-powered analysis.
+
+---
+
+### AI Summary & Transcript
+![AI Summary](./screenshot-summary.png)
+
+> View the extracted transcript and AI-generated summary of your uploaded content.
+
+---
+
+### Chat with Your Content
+![Chat Interface](./screenshot-chat.png)
+
+> Ask questions about your uploaded document or media and get instant AI answers.
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+├── pages/            # Page-level views
+├── service/          # API service layer (Axios)
+└── styles/           # Global and component styles
+
+public/               # Static assets
+```
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/)
+- npm
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <frontend-repository-url>
+cd multimedia-web-app-frontend
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure the API base URL
+
+Open `src/service/ApiService.js` and set your backend URL:
+
+```js
+static BASE_URL = "https://your-backend-url.onrender.com";
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+App runs at: `http://localhost:5173`
+
+---
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint checks |
+
+---
+
+## Authentication
+
+- JWT token is stored in `localStorage` after successful login
+- Protected API requests automatically include the `Authorization` header via Axios interceptors
+
+---
+
+## Deployment
+
+| Service | Platform |
+|---------|----------|
+| Frontend | Vercel / Netlify |
+| Backend | Docker (Render or similar) |
+| Database | PostgreSQL |
+
+For Vercel deployment, set the `BASE_URL` environment variable or update `ApiService.js` before building.
+
+---
+
+## Notes
+
+- All API communication goes through `src/service/ApiService.js`
+- Backend routes require authentication — unauthenticated requests will be rejected
+- Environment-based API configuration is supported
