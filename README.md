@@ -27,35 +27,7 @@ React + Vite frontend for the MultimediaWebApp platform. Provides user authentic
 
 ---
 
-## Screenshots
 
-### Registration
-![Register Page](./screenshot-register.png)
-
-> Create your intelligent AI workspace with username, email, and password.
-
----
-
-### Dashboard — Upload Content
-![Dashboard](./screenshot-dashboard.png)
-
-> Upload PDFs, audio, video, and multimedia files for AI-powered analysis.
-
----
-
-### AI Summary & Transcript
-![AI Summary](./screenshot-summary.png)
-
-> View the extracted transcript and AI-generated summary of your uploaded content.
-
----
-
-### Chat with Your Content
-![Chat Interface](./screenshot-chat.png)
-
-> Ask questions about your uploaded document or media and get instant AI answers.
-
----
 
 ## Project Structure
 
