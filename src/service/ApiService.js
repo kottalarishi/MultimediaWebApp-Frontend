@@ -1,12 +1,11 @@
 import axios from "axios";
 
-
 export default class ApiService {
 
-    static BASE_URL = "http://localhost:8080";
+    static BASE_URL = "http://13.206.241.248:8080";
 
-    
     static getHeader() {
+
         const token = localStorage.getItem("token");
 
         return {
@@ -35,7 +34,6 @@ export default class ApiService {
         return response.data;
     }
 
-   
     static async uploadDocument(formData) {
 
         const response = await axios.post(
@@ -64,7 +62,6 @@ export default class ApiService {
         return response.data;
     }
 
-    
     static async summarizeDocument(documentId) {
 
         const response = await axios.get(
@@ -90,7 +87,6 @@ export default class ApiService {
         return response.data;
     }
 
-   
     static async getChatHistory(documentId) {
 
         const response = await axios.get(
@@ -102,7 +98,6 @@ export default class ApiService {
 
         return response.data;
     }
-
 
     static logout() {
         localStorage.removeItem("token");
