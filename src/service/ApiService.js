@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class ApiService {
 
-    static BASE_URL = "http://13.206.241.248:8080";
+    static BASE_URL = "https://multimedia-webapp-latest.onrender.com";
 
     static getHeader() {
 
